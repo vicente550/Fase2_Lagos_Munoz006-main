@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content%}
+
+<h1>VideoJuego: {{videojuego}}</h1>
+<p>{{videojuego.departure}}</p>
+
+<div style="margin-left:20px;margin-top:20px;">
+<h4>Video Juego</h4>
+    <dl>
+        {%for videojuego in VideoJuego.videojuego_set.all%}
+            <dt><a href="{%url 'videojuego-detail' videojuego.pk %}">{{videojuego}}</a>
+            ({{videojuego.videojuegoinstance_set.all.count}})</dt>
+            <dd>{{videojuego.summary}}</dd>
+        {%endfor%}
+
+    </dl>
+</div>
+{%endblock%}
