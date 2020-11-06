@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import VideoJuego
+from . models import VideoJuego
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -27,5 +27,8 @@ class VideoJuegoDelete(DeleteView):
     success_url = reverse_lazy('videojuego')
 
 class VideoJuegoDetailView(generic.DetailView):
+    model = VideoJuego
+
+class VideojuegoListView(generic.ListView):
     model = VideoJuego
 

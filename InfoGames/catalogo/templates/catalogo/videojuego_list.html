@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Videojuegos </h1>
+
+    {% if videoJuego_list %}
+
+        <ul>
+            {% for videojuego in videoJuego_list %}
+            <li>
+                <a href="{{ VideoJuego.get_absolute_url }}"> {{ VideoJuego.title }} </a> ({{ VideoJuego.name }})
+            </li>
+            {% endfor %}
+
+
+        </ul>
+
+    {% else %}
+        <p>There are no games in the page</p>
+
+    {% endif %}
+{% endblock %}
